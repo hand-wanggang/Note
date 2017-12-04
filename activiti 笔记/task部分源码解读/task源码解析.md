@@ -4,14 +4,13 @@
 ![](../img/activiti-task-class-2017-12-04.jpg)
 
 ### 整体分析
-**
-1：TaskService是Activiti的操作Task的API。通过类图可以看到其实现TaskServiceImpl依赖于Command和TaskQuery。
-2：Task部分有很多Command实现，类图上只举了一些示例。这些Command的具体实现依赖于TaskEntityManager来实现其功能。
-3：TaskQuery相当于一个参数的传递者，其连接了TaskService和TaskEntityManager之间的数据传递。TaskService创建TaskQuery实例，TaskQuery收集参数，TaskEntityManager通过TaskQuery获取参数，进行查询。
-4：TaskEntityManager是Task部分任务的接收者，对Task的所有操作最终都会经过TaskEntityManager
-5: TaskEntityManager相当于一个静态代理，其代理TaskDataManager，所有的实际操作都由TaskDataManager来完成。
-6：TaskDataManager的操作最终通过DbSqlSession操作MyBatis的api完成。
-**
+* __1：TaskService是Activiti的操作Task的API。通过类图可以看到其实现TaskServiceImpl依赖于Command和TaskQuery。__
+* __2：Task部分有很多Command实现，类图上只举了一些示例。这些Command的具体实现依赖于TaskEntityManager来实现其功能。__
+* __3：TaskQuery相当于一个参数的传递者，其连接了TaskService和TaskEntityManager之间的数据传递。TaskService创建TaskQuery实例，TaskQuery收集参数，TaskEntityManager通过TaskQuery获取参数，进行查询。__
+* __4：TaskEntityManager是Task部分任务的接收者，对Task的所有操作最终都会经过TaskEntityManager。__
+* __5: TaskEntityManager相当于一个静态代理，其代理TaskDataManager，所有的实际操作都由TaskDataManager来完成。__
+* __6：TaskDataManager的操作最终通过DbSqlSession操作MyBatis的api完成。__
+__
 - - -
 
 ### 一、TaskService和Command、TaskQuery之间的依赖
