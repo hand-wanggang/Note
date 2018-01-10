@@ -1,7 +1,8 @@
 
-##Activiti中使用自定义用户和用户组
-#**一**、实现步骤
-* ####Step1:自定义类HepUserEntityManager继承UserEntityManager
+## Activiti中使用自定义用户和用户组
+# **一**、实现步骤
+* #### Step1:自定义类HepUserEntityManager继承UserEntityManager
+
 ```java
 public class HepUserEntityManager extends UserEntityManager {
 
@@ -93,13 +94,9 @@ public class HepUserEntityManager extends UserEntityManager {
 
 }
 ```
->####注意：
-> 1： 此处的HepUserEntityManager重写了UserEntityManager的查询操作，并将一些修改操作标记为不支持的操作。因为插入和修改操作不应属于activiti来管理。
-> 
-> 2：所有查询的实际操作都由，当前自定义表的管理者userService来实现。
 ---
 
-* ####Step2:自定义类HepGroupEntityManager继承GroupEntityManager
+*  #### Step2自定义类HepGroupEntityManager继承GroupEntityManager
 ```java
 public class HepGroupEntityManager extends GroupEntityManager {
 
@@ -157,11 +154,12 @@ public class HepGroupEntityManager extends GroupEntityManager {
     }
 }
 ```
->###注意：
->1: 此处与上一步几乎类似，只是把相关的用户组查询操作移交给userService来完成。
+> ### 注意
+> 1、 此处与上一步几乎类似，只是把相关的用户组查询操作移交给userService来完成。
+
 ---
 
-* ###Step3:实现UserEntityManager的自定义工产
+* ### Step3:实现UserEntityManager的自定义工产
 ```java
 public class HepUserEntityManagerFactory implements SessionFactory {
 
@@ -182,13 +180,13 @@ public class HepUserEntityManagerFactory implements SessionFactory {
     }
 }
 ```
->####注意：
->1: 注意此处的getSessionType返回的仍是acyiviti默认实现的UserIdentityManager.class。这样做的目的是为了之后可以替换activiti的默认实现做准备。
->2: openSessio方法返回的确实我们自定义的HepUserEntityManager的实例
->3: getSessionType()相当于返回一个键，openSession()返回对应的值。
+> #### 注意：
+> 1: 注意此处的getSessionType返回的仍是acyiviti默认实现的UserIdentityManager.class。这样做的目的是为了之后可以替换activiti的默认实现做准备。
+> 2: openSessio方法返回的确实我们自定义的HepUserEntityManager的实例
+> 3: getSessionType()相当于返回一个键，openSession()返回对应的值。
 ---
 
-* ####Step4:实现GroupEntityManager的自定义工产
+* #### Step4:实现GroupEntityManager的自定义工产
 ```java
 public class HepGroupEntityManagerFactory implements SessionFactory {
 
@@ -213,23 +211,23 @@ public class HepGroupEntityManagerFactory implements SessionFactory {
     }
 }
 ```
->####注意：
->原理同上一步
+> #### 注意：
+> 原理同上一步
 ---
 
 * ####Step5:配置替换默认实现
 ![](img/2017-12-03_172341.png)
 ---
 
-#**二**、实现原理
+# **二**、实现原理
 通过以上内容我们已经成功替换了activiti的默认用户和用户组实现。下面我们来阐释其替换原理
-####阅读activiti的配置器源码ProcessEngineConfigurationImpl
+#### 阅读activiti的配置器源码ProcessEngineConfigurationImpl
 ```java
 public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfiguration {
 
     protected List<SessionFactory> customSessionFactories;
     protected Map<Class<?>, SessionFactory> sessionFactories;
- 
+
 
     protected void initSessionFactories() {
         if (this.sessionFactories == null) {
@@ -296,9 +294,9 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
     }
 }
 ```
->####注意：
->1: 此处只是截取了部分核心代码，便于理解
->2: 通过代码可以看到所有的实体管理类xxxEntityManager都在方法initSessionFactories()中被加载，包括UserEntityManager和GroupEntityManager。
-3：customSessionFactories 用于加载用户自定义的SessionFactory，并且晚于默认的SessionFactory被加载（这些在源码中都有体现）。
-4、sessionFactories是方法initSessionFactories()操作的最终结果，并且其是一个Map结构。Map的键是Class，值是SessionFactory的实例。我们自定义的工厂HepGroupEntityManagerFactory和HepUserEntityManagerFactory也同样实现了SessionFactory接口，并且通过方法getSessionType()返回的是activiti默认的用户和用户组管理类UserIdentityManager.class和GroupIdentityManager.class。键相同但是值不同，这就是我们替换的原理。
+> #### 注意：
+> 1: 此处只是截取了部分核心代码，便于理解
+> 2: 通过代码可以看到所有的实体管理类xxxEntityManager都在方法initSessionFactories()中被加载，包括UserEntityManager和GroupEntityManager。
+> 3：customSessionFactories 用于加载用户自定义的SessionFactory，并且晚于默认的SessionFactory被加载（这些在源码中都有体现）。
+> 4、sessionFactories是方法initSessionFactories()操作的最终结果，并且其是一个Map结构。Map的键是Class，值是SessionFactory的实例。我们自定义的工厂HepGroupEntityManagerFactory和HepUserEntityManagerFactory也同样实现了SessionFactory接口，并且通过方法getSessionType()返回的是activiti默认的用户和用户组管理类UserIdentityManager.class和GroupIdentityManager.class。键相同但是值不同，这就是我们替换的原理。
 <!--<meta http-equiv="refresh" content="0.1">-->
