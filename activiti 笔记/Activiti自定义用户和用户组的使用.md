@@ -215,7 +215,7 @@ public class HepGroupEntityManagerFactory implements SessionFactory {
 > 原理同上一步
 ---
 
-* ####Step5:配置替换默认实现
+* #### Step5:配置替换默认实现
 ![](img/2017-12-03_172341.png)
 ---
 
