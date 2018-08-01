@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>sourcing-enging</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); border-image: initial; background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.04); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: #abb2bf;
+  background-color: #3a3f4b;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #3a3f4b;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--source.syntax--embedded.syntax--source {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--constant.syntax--language,
+.syntax--source.syntax--elixir .syntax--constant.syntax--numeric,
+.syntax--source.syntax--elixir .syntax--constant.syntax--definition {
+  color: #61afef;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--definition,
+.syntax--source.syntax--elixir .syntax--variable.syntax--anonymous {
+  color: #c678dd;
+}
+.syntax--source.syntax--elixir .syntax--parameter.syntax--variable.syntax--function {
+  color: #d19a66;
+  font-style: italic;
+}
+.syntax--source.syntax--elixir .syntax--quoted {
+  color: #98c379;
+}
+.syntax--source.syntax--elixir .syntax--keyword.syntax--special-method,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--section,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--source.syntax--empty {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--readwrite.syntax--module .syntax--punctuation {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--regexp.syntax--section,
+.syntax--source.syntax--elixir .syntax--regexp.syntax--string {
+  color: #be5046;
+}
+.syntax--source.syntax--elixir .syntax--separator,
+.syntax--source.syntax--elixir .syntax--keyword.syntax--operator {
+  color: #d19a66;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--constant {
+  color: #e5c07b;
+}
+.syntax--source.syntax--elixir .syntax--array,
+.syntax--source.syntax--elixir .syntax--scope,
+.syntax--source.syntax--elixir .syntax--section {
+  color: #828997;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--php .syntax--class.syntax--bracket {
+  color: #abb2bf;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="-">李宁-寻源引擎文档</h1>
+<h2 id="-">一、寻源引擎的结构</h2>
+<h3 id="1-1-">1.1 寻源引擎结构图</h3>
+<p>  李宁寻源引擎主要由三部分组成：缓存部分、监控部分和主题流程部分。其中主题流程部分有各种规则组成大体可以分为：过滤规则、优先规则、排序规则。下图即为寻源引擎结构。
+<img alt="寻源引擎结构" src="https://raw.githubusercontent.com/hand-wanggang/img/master/%E5%AF%BB%E6%BA%90%E5%BC%95%E6%93%8E%E7%BB%93%E6%9E%84%E5%9B%BE.png"></p>
+<ul>
+<li>数据缓存部分: 数据缓存部分为整个寻源引擎提供基础数据支持，例如服务点数据、寻源规则数据、网店关联服务点数据、商品指定服务点发货数据等等。该部分将推送到redis的数据通过订阅消息的方式来实现缓存的更新，保证数据同步。当出现订阅消息丢失的情况就需要监控部分启动缓存的全量刷新。</li>
+<li>监控部分: 监控部分记录了寻源的各种信息和控制，包括寻源的启停控制、寻源时间和吞吐量的计算。</li>
+<li>寻源主题部分：寻源主题部分包含了寻源引擎的全部逻辑，各个项目的寻源规则不同所有这部分的内容也不同，之后会详细介绍这部分。<h2 id="-">二、数据缓存部分</h2>
+  李宁项目寻源引擎的数据缓存分为OMS部分和寻源引擎部分。OMS部分由job和数据监听两部分组成，job用于将缓存数据全量推送到redis，监听部分用于实时更新数据的变更及时推送消息到redis；寻源引擎的数据缓存部分则主要是订阅消息来实现缓存的刷新。<h3 id="2-1-oms-">2.1 OMS端的数据缓存实现</h3>
+<h4 id="2-1-1-oms-job-">2.1.1 OMS端数据缓存的job实现及依赖如类图所示</h4>
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/oms-%E7%BC%93%E5%AD%98-1job.png"></li>
+<li>HepRedisDataCacheCoreService接口有两个方法，分别是将数据同步到redis和将数据从redis删除。</li>
+<li>AbstractCacheDataJob 依赖于HepRedisDataCacheCoreService,JOB所有关于redis的操作都由HepRedisDataCacheCoreService来完成，job的主要作用是通过serachAll()和parseToCacheDataStruct()方法，将要缓存的数据查询出来，并转化为缓存结构。这两都是抽象方法由不同的具体实现。</li>
+<li>AbstractCacheDataJob 类的所有子类都实现了serachAll()和parseToCacheDataStruct()。<h4 id="2-1-2-oms-">2.1.2 OMS端数据监听及缓存更新实现及依赖如类图所示</h4>
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/oms-%E7%BC%93%E5%AD%98%E7%9B%91%E5%90%AC.png"></li>
+<li>HepRedisDataCacheCoreService接口有两个方法，分别是将数据同步到redis和将数据从redis删除。</li>
+<li>HepBaseCacheManager针对新增、更新、删除等不同的操作类型封装不同的消息，同步数据。</li>
+<li>HepBaseCacheService 的所有实现类将有变动的Model转化为对应的缓存结构，交由HepBaseCacheManager处理。<h4 id="2-1-3-">2.1.3 缓存的基础数据列表及其对应缓存实现</h4>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据</th>
+<th>对应缓存处理实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商品指定服务点发货</td>
+<td>HepSkuAppointPosBaseCacheService</td>
+</tr>
+<tr>
+<td>服务点数据</td>
+<td>HepPointOfServiceBaseCacheService</td>
+</tr>
+<tr>
+<td>收货地址限制基础数据</td>
+<td>HepTargetAddressLimitBaseCacheService</td>
+</tr>
+<tr>
+<td>商品折扣数据</td>
+<td>HepProductDiscountBaseCacheService</td>
+</tr>
+<tr>
+<td>服务点区域优先级数据</td>
+<td>HepZone2PosBaseCacheService</td>
+</tr>
+<tr>
+<td>寻源规则数据</td>
+<td>HepSourcingRuleBaseCacheService</td>
+</tr>
+<tr>
+<td>寻源规则行</td>
+<td>HepSourcingRuleEntryBaseCacheService</td>
+</tr>
+<tr>
+<td>寻源次数限制</td>
+<td>HepSourcingTimesLimitCacheService</td>
+</tr>
+<tr>
+<td>最大查单次数限制</td>
+<td>HepSplitTimesLimitBaseCacheService</td>
+</tr>
+<tr>
+<td>网店关联库位数据</td>
+<td>HepBaseStoreRelWarehouseBaseCacheService</td>
+</tr>
+<tr>
+<td>服务点关联库位数据</td>
+<td>HepPosRelWarehouseBaseCacheService</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-2-">2.2 寻源引擎端的数据缓存实现</h3>
+<p>  寻源端数据缓存是将OMS端推送到redis的数据缓存消息接收并转化。其实现利用了redis的发布和订阅功能。其实现如下类图所示：
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/%E5%AF%BB%E6%BA%90%E5%BC%95%E6%93%8E%E7%BC%93%E5%AD%98%20-1.png"></p>
+<ul>
+<li>HepBasicDataCacheInstance 是一个抽象类，所有的数据缓存实现类必须继承该类，该类实现了对消息的订阅操作，对消息的转化和使用由具体的实现类实现。</li>
+<li>IHepPauseEventHandler 接口，是寻源引擎的一个管理接口，所有实现了改接口的类都可以接受寻源引擎的管理，这和之后的寻源监控也有一定的关系。</li>
+<li>HepBasicDataCacheManager 收集了所有HepBasicDataCacheInstance的实现，对这些实例进行统一管理。</li>
+<li>其余部分通过类图很容易就可以看出他们之间的依赖关系。</li>
+</ul>
+<h2 id="-">三、寻源监控</h2>
+<p>  寻源监控采用的是jmx的方式对系统暴露出来的资源进行监控和管理。该部分目前有监控检查、寻源TPS统计、查询可发货服务点入口三部分。其类图如下:
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/%E5%AF%BB%E6%BA%90%E7%9B%91%E6%8E%A7.png"></p>
+<ul>
+<li><p>类图中HepSourcingEngineMetricState都是静态成员和静态方法，主要用于记录寻源信息、不如寻源时间、拆单次数等等。所有这些数据的收集都是通过切面HepSourcingInfoAspect来完成。</p>
+</li>
+<li><p>IHepMetricMonitor、IHepHealthyMonitor、HepSourcingJmxResource 都是Jmx暴露资源的接口，形式如此，不再深究。</p>
+</li>
+</ul>
+<h2 id="-">三、寻源主体</h2>
+<h3 id="3-1-">3.1 寻源流程主体结构</h3>
+<p>  寻源引擎的主体就是对具体业务逻辑的实现了。这部分的程序结构由主干流程、子流程、寻源节点三个维度组成。</p>
+<ul>
+<li>寻源节点:就是一个具体的业务逻辑比如最大寻源次数限制、最大查单次数限制、网店关联服务点等，一般一个寻源节点对应一个规则。</li>
+<li>子流程: 就是同一类型的寻源规则根据一定的顺序组成的流程。规则分为：过滤规则、优先规则、排序规则、占库规则、拆单规则五类。</li>
+<li>主干流程: 主干流程就是根据各主流程的执行结果确定寻源的路径。</li>
+</ul>
+<p>  寻源主题部分类图如下：
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/%E5%AF%BB%E6%BA%90%E4%B8%BB%E4%BD%93%E7%B1%BB%E5%9B%BE.png"></p>
+<ul>
+<li>寻源节点对应HepProcessNode，其实现类众多</li>
+<li>子流程对应 HepProcessorPropeller，其实现类等于寻源规则的类型</li>
+<li>主体流程对应 DefaultHepSourcingPipeline</li>
+</ul>
+<h3 id="3-2-">3.2 寻源流程主体规则类型及其描述</h3>
+<table>
+<thead>
+<tr>
+<th>规则类型</th>
+<th>规则描述</th>
+<th>实现类入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>过滤规则</td>
+<td>网店关联服务点</td>
+<td>HepBaseStoreRelWarehouseFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>最大寻源次数限制</td>
+<td>HepSourcingTimesFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>最大拆单次数限制</td>
+<td>HepSplitTimesLimitFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>商品指定服务点发货</td>
+<td>HepProductAppointPosFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>收货地址服务点限制</td>
+<td>HepDeliveryAddressLimitPosFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>接单量上限限制</td>
+<td>HepPushOrderLimitPosFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>已分配门店过滤</td>
+<td>HepPreRejectPosFilter</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>库存量过滤</td>
+<td>HepInventoryLevelPosFilter</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>判断EC或者非EC优先</td>
+<td>HepECOrNOECPriority</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>最小拆单优先</td>
+<td>HepMinimumSplitPriority</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>优先预留仓库</td>
+<td>HepPreparedStockSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>与发货地址同区域仓库&gt; 全国</td>
+<td>HepSameRegionWithDeliveryBetterThanCountrySorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>同区域仓库内部优先级</td>
+<td>HepEcSameRegionPosCompositeSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>仓库距离优先</td>
+<td>HepDistanceSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>发货折扣优先</td>
+<td>HepDiscountSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>同市&gt;同省&gt;全国</td>
+<td>HepCityAheadProvinceAheadCountrySorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>RDC&gt;NDC&gt;门店</td>
+<td>HepRDCAheadNDCAheadStoreSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>库存深度优先</td>
+<td>HepInventoryDepthSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>可接单量水平</td>
+<td>HepPosUseablePushCountSorted</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>B2B NDC &gt; RDC</td>
+<td>HepNDCAheadRDCSorted</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>按件拆</td>
+<td>HepSplitByPiece</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>按行拆</td>
+<td>HepSplitByLine</td>
+</tr>
+<tr>
+<td>占库规则</td>
+<td>占库</td>
+<td>HepEcOccupancyStock</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-3-">3.3 寻源流程主体流程</h3>
+<p>  寻源主体的流程图如下所示。流程图中未详细描述子流程，子流程中每个节点都是配置完成，配置顺序就是执行顺序，在一个子流程中，任意一个节点执行后结果若不是FINISH该子流程就会结束并返回结果到主流程。
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/%E5%AF%BB%E6%BA%90%E4%B8%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png"></p>
+<h3 id="3-4-">3.4 李宁寻源引擎-各渠道订单寻源规则</h3>
+<p>EC渠道订单寻源规则:</p>
+<table>
+<thead>
+<tr>
+<th>规则类型</th>
+<th>顺序</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>过滤规则</td>
+<td>1</td>
+<td>网店关联服务点</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>2</td>
+<td>最大寻源次数限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>3</td>
+<td>最大拆单次数限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>4</td>
+<td>商品指定服务点发货</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>5</td>
+<td>收货地址限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>6</td>
+<td>门店接单量过滤</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>7</td>
+<td>已分配门店过滤</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>8</td>
+<td>库存量过滤</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>1</td>
+<td>EC优先或非EC优先判断</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>2</td>
+<td>最少拆单优先</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>1</td>
+<td>优先使用预留库存仓库</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>2</td>
+<td>收货地址同区域服务点优先</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>3</td>
+<td>同区域多个仓库优先级(单件-库存深度排序/多件 - 同区域仓库优先级)</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>4</td>
+<td>距离排序</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>1</td>
+<td>按行拆单</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>2</td>
+<td>按件拆单</td>
+</tr>
+<tr>
+<td>占库规则</td>
+<td>1</td>
+<td>占库规则</td>
+</tr>
+</tbody>
+</table>
+<p>线下渠道订单寻源规则:</p>
+<table>
+<thead>
+<tr>
+<th>规则类型</th>
+<th>顺序</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>过滤规则</td>
+<td>1</td>
+<td>网店关联服务点</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>2</td>
+<td>最大寻源次数限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>3</td>
+<td>最大拆单次数限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>4</td>
+<td>商品指定服务点发货</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>5</td>
+<td>收货地址限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>6</td>
+<td>门店接单量过滤</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>7</td>
+<td>已分配门店过滤</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>8</td>
+<td>库存量过滤</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>1</td>
+<td>EC优先或非EC优先判断</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>2</td>
+<td>最少拆单优先</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>1</td>
+<td>优先使用预留库存仓库</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>2</td>
+<td>发货方折扣排序</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>3</td>
+<td>与收获地址同市&gt; 同省 &gt; 全国的服务点</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>4</td>
+<td>服务点类型按RDC&gt;NDC&gt;门店排序</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>5</td>
+<td>距离优先</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>6</td>
+<td>库存深度排序</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>7</td>
+<td>服务点可接单量水平排序</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>1</td>
+<td>按行拆单</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>2</td>
+<td>按件拆单</td>
+</tr>
+<tr>
+<td>占库规则</td>
+<td>1</td>
+<td>占库规则</td>
+</tr>
+</tbody>
+</table>
+<p>B2B渠道订单寻源规则:</p>
+<table>
+<thead>
+<tr>
+<th>规则类型</th>
+<th>顺序</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>过滤规则</td>
+<td>1</td>
+<td>网店关联服务点</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>2</td>
+<td>最大寻源次数限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>3</td>
+<td>最大拆单次数限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>4</td>
+<td>商品指定服务点发货</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>5</td>
+<td>收货地址限制</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>6</td>
+<td>门店接单量过滤</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>7</td>
+<td>已分配门店过滤</td>
+</tr>
+<tr>
+<td>过滤规则</td>
+<td>8</td>
+<td>库存量过滤</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>1</td>
+<td>EC优先或非EC优先判断</td>
+</tr>
+<tr>
+<td>优先规则</td>
+<td>2</td>
+<td>最少拆单优先</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>1</td>
+<td>优先使用预留库存仓库</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>2</td>
+<td>发货方折扣排序</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>3</td>
+<td>与收获地址同市&gt; 同省 &gt; 全国的服务点</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>4</td>
+<td>服务点类型按NDC&gt;RDC&gt;门店 排序</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>5</td>
+<td>距离优先</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>6</td>
+<td>库存深度排序</td>
+</tr>
+<tr>
+<td>排序规则</td>
+<td>7</td>
+<td>服务点可接单量水平排序</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>1</td>
+<td>按行拆单</td>
+</tr>
+<tr>
+<td>拆单规则</td>
+<td>2</td>
+<td>按件拆单</td>
+</tr>
+<tr>
+<td>占库规则</td>
+<td>1</td>
+<td>占库规则</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-">四、寻源结果处理</h2>
+<p>  寻源结果处理部分是OMS端的处理程序。OMS端将要寻源的配货单推送到寻源引擎，寻源引擎将寻源结果推送到结果队列，OMS端寻源结果处理程序从队列获取寻源结果数据处理。
+寻源结果处理过程:</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>流程名</th>
+<th>流程描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>step1</td>
+<td>寻源结果反序列化</td>
+<td>将寻源结果反序列化并找到原配货单</td>
+</tr>
+<tr>
+<td>step2</td>
+<td>寻源结果校验</td>
+<td>校验原配货单的配货单行及配货单行商品数量是否与寻源后一致</td>
+</tr>
+<tr>
+<td>step3</td>
+<td>寻源结果组合</td>
+<td>对寻源结果拆出来的新单和原单数据组合</td>
+</tr>
+<tr>
+<td>step4</td>
+<td>B2B订单整体转异常</td>
+<td>B2B的订单如果有部分失败，则全部转异常单</td>
+</tr>
+<tr>
+<td>step5</td>
+<td>寻源结果持久化</td>
+<td>对新单进行保存，原单进行更新</td>
+</tr>
+<tr>
+<td>step6</td>
+<td>调用ECERP库存转移接口</td>
+<td>对于需要进行库存转移的订单，需要调用ECERP的库存转移接口,申请转移库存</td>
+</tr>
+<tr>
+<td>step7</td>
+<td>调用ECERP库存占用接口,申请占用ECERP的库存</td>
+<td>对于无需转移的配货当，直接调用ecerp的申请占货接口，并修改配货单状态为占货中</td>
+</tr>
+</tbody>
+</table>
+<p>  寻源结果处理部分类图如下:
+<img alt="" src="https://raw.githubusercontent.com/hand-wanggang/img/master/%E5%AF%BB%E6%BA%90%E7%BB%93%E6%9E%9C%E5%A4%84%E7%90%86.png"></p>
+<ul>
+<li>HepSendTransferRequestJob 和 HepSendOccupayRequestJob是对step6和step7的优化,通过job的方式去调用库存转移接口和库存占货接口，避免因为网络请求影响寻源结果处理的速度。</li>
+</ul></body>
+</html>
